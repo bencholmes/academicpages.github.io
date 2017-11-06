@@ -7,8 +7,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-About
-======
+
 I'm currently a PhD student at the Sonic Arts Research Centre (SARC) @ Queen's University Belfast, researching digital emulation of musical circuits.
 
 Recent
