@@ -83,8 +83,8 @@ author:
   bio              : "Audio Electronics/DSP researcher, PhD student at SARC"
   location         : "Belfast, U.K."
   employer         :
-  googlescholar    : "http://yourfullgooglescholarurl.com"
-  email            :
+  googlescholar    : #"http://yourfullgooglescholarurl.com"
+  email            : "bholmes02@qub.ac.uk"
   uri              :
   bitbucket        :
   codepen          :
@@ -97,14 +97,14 @@ author:
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         :
-  orcid            : "http://orcid.org/yourorcidurl"
+  linkedin         : "https://www.linkedin.com/in/bencholmes/"
+  orcid            : #"http://orcid.org/yourorcidurl"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "benjaminholmes"
+  twitter          : "benjamholmes"
   vine             :
   weibo            :
   xing             :
