@@ -23,10 +23,7 @@ Work experience
 
 *Apple*
 
-  * Designed audio electronics, involving the full range of circuit design including:
-    * Creating specifications
-    * PCB layout
-    * Testing prototype designs
+  * Designed audio electronics, involving the full range of circuit design including: creating specifications; PCB layout; testing prototype designs.
 
 **Course Demonstrator** (Oct. 2014 - Jan. 2017)
 
@@ -46,14 +43,14 @@ Education
 
 *Queen's University Belfast*
 
-    * Preliminary thesis title: "Guitar effects identification and emulation"
+* Preliminary thesis title: "Guitar effects identification and emulation"
 
 **BSc. in Music Technology**, 2014
 
 *University of York*
 
-    * Classification: First class
-    * Final year project: "A prototype standalone real-time musical instrument using granular synthesis". Received department award for best final year project
+* Classification: First class
+* Final year project: "A prototype standalone real-time musical instrument using granular synthesis". Received department award for best final year project
 
 Publications
 ======
