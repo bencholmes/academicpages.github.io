@@ -12,31 +12,35 @@ redirect_from:
 Work experience
 ======
 
-**Postgraduate Researcher** (Oct. 2014 - Current)
+Postgraduate Researcher
+------
 
-*Sonic Arts Research Centre, Queen's University Belfast*
+*Sonic Arts Research Centre, Queen's University Belfast*, Oct. 2014 - Current
 
   * Developing emulations of analogue circuits in MATLAB and C++
   * Analysing accuracy to reference devices and computational efficiency of algorithms.
 
-**Audio HW Engineering Intern** (April-Sept. 2017)
+Audio HW Engineering Intern
+-----
 
-*Apple*
+*Apple*, April-Sept. 2017
 
   * Designed audio electronics, involving the full range of circuit design including:
     * Creating specifications
     * PCB layout
     * Testing prototype designs
 
-**Course Demonstrator** (Oct. 2014 - Jan. 2017)
+Course Demonstrator
+-----
 
-*School of Electronics, Electrical Engineering and Computer Science, Queen's University Belfast*
+*School of Electronics, Electrical Engineering and Computer Science, Queen's University Belfast*, Oct. 2014 - Jan. 2017
 
   * Helped students in developing their knowledge of C programming and circuit analysis through workshops and tutorials
 
-**iOS App Design Intern** (July-Aug 2014)
+iOS App Design Intern
+-----
 
-*Department of Electronics, University of York*
+*Department of Electronics, University of York*, July-Aug 2014
   * Developed an iOS application using Objective C to gather data on the relation between boys' speaking pitch and pubertal development ([available](http://www.davidmhoward.com/iPhoneAppSpeechTest.html))
 
 
