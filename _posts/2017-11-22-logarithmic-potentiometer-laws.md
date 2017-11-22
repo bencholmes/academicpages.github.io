@@ -36,3 +36,15 @@ $$ 0 = a + c,\quad c = -a $$
 And therefore we are given a simpler equation with only two parameters:
 
 $$ y = a\ b^x - a $$
+
+Constraining with our second set of points:
+
+$$ 1 = ab - a,\quad \frac{1}{b-1} = a $$
+
+There is still one equation left to determine the parameter values. I find it useful to map this as a mid-point of the curve, for example saying that when the wiper is at half way I want the resistance to be at 10% of the total. This can be parameterised again so that we can change the midpoint, saying \\(x = 0.5\\), \\(y = y_m\\). This gives our final constraint
+
+$$ y_m = a(\sqrt(b) - 1),\quad y_m = \frac{\sqrt{b} - 1)}{b-1},\quad b = \left(\frac{1}{y_m} - 1\right) $$
+
+And by setting the value for \\(y_m\\) we can create a variety of mappings:
+
+![Logarithmic potentiometer laws](/images/log-pot-mappings.png)
