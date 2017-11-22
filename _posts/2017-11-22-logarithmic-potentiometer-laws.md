@@ -21,10 +21,18 @@ In this formulation, \\(0 \leq \alpha \leq 1 \\).
 
 Whereas a linear potentiometer can be seen as straight, the remaining potentiometer laws are curvy. A curved mapping is useful for when controlling things such as volume, where our perception fits closely to a curve. In this post a general logarithmic form is shown that can model a variety of curves.
 
-## General form
+## Logarithmic general form
 
 The general form of the curve is given by
 
 $$ y = a\ b^x + c$$
 
-where \\(x\\) is the wiper position, \\(y\\) is the primary resistance, and \\(a\\) \\(b\\) and \\(c\\) are free parameters for curve fitting.
+where \\(x\\) is the wiper position, \\(y\\) is the primary resistance, and \\(a\\), \\(b\\) and \\(c\\) are free parameters for curve fitting.
+
+This mapping is applied prior to calculating resistances, so will effectively map \\(x\\) to \\(\alpha\\). For this reason it can be assumed that the limits of both \\(x\\) and \\(y\\) are zero and one. To fit this curve we then have two equations, when both \\(x\\) and \\(y\\) are 0:
+
+$$ 0 = a + c,\quad c = -a $$
+
+And therefore we are given a simpler equation with only two parameters:
+
+$$ y = a\ b^x - a $$
