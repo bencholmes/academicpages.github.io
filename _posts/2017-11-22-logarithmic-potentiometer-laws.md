@@ -47,7 +47,7 @@ $$ 1 = ab - a,\quad \frac{1}{b-1} = a $$
 
 There is still one equation left to determine the parameter values. I find it useful to map this as a mid-point of the curve, for example saying that when the wiper is at half way I want the resistance to be at 10% of the total. This can be parameterised again so that we can change the midpoint, saying \\(x = 0.5\\), \\(y = y_m\\). This gives our final constraint
 
-$$ y_m = a(\sqrt{b} - 1),\quad y_m = \frac{\sqrt{b} - 1}{b-1},\quad b = \left(\frac{1}{y_m} - 1\right) $$
+$$ y_m = a(\sqrt{b} - 1),\quad y_m = \frac{\sqrt{b} - 1}{b-1},\quad b = \left(\frac{1}{y_m} - 1\right)^2 $$
 
 And by setting the value for \\(y_m\\) we can create a variety of mappings:
 
@@ -56,3 +56,5 @@ And by setting the value for \\(y_m\\) we can create a variety of mappings:
 Note that when setting \\(y_m = 0.5\\) that \\(b = \infty\\)! But for this value we can just use a linear map so no need to waste the computation time for the exponent!
 
 Choosing for example \\(y_m = 0.15\\) will give quite a good approximation of a log pot, though I say this without measurements or further evidence. For an anti-log pot one could select a value around \\(0.85\\).
+
+<script src="https://gist.github.com/bencholmes/87ceeaee702ec0dc1d0426283d2ae2f6.js"></script>
