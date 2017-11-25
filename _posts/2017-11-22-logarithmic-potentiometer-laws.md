@@ -49,12 +49,16 @@ There is still one equation left to determine the parameter values. I find it us
 
 $$ y_m = a(\sqrt{b} - 1),\quad y_m = \frac{\sqrt{b} - 1}{b-1},\quad b = \left(\frac{1}{y_m} - 1\right)^2 $$
 
-And by setting the value for \\(y_m\\) we can create a variety of mappings:
+## Results
+
+By setting the value for \\(y_m\\) we can create a variety of mappings:
 
 ![Logarithmic potentiometer laws](/images/log-pot-mappings.png)
 
-Note that when setting \\(y_m = 0.5\\) that \\(b = \infty\\)! But for this value we can just use a linear map so no need to waste the computation time for the exponent!
+Note that when setting \\(y_m = 0.5\\) that \\(b = \infty\\)! But for this value we can just use a linear map so no need to waste the computation time for the exponent.
 
 Choosing for example \\(y_m = 0.15\\) will give quite a good approximation of a log pot, though I say this without measurements or further evidence. For an anti-log pot one could select a value around \\(0.85\\).
+
+If you're interested in further playing around with this, here is the MATLAB gist (although it should be fairly compatible to Octave, and also self-explanatory if you want to port it):
 
 <script src="https://gist.github.com/bencholmes/87ceeaee702ec0dc1d0426283d2ae2f6.js"></script>
