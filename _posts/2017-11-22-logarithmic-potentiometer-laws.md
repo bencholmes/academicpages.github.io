@@ -53,7 +53,13 @@ $$ y_m = a(\sqrt{b} - 1),\quad y_m = \frac{\sqrt{b} - 1}{b-1},\quad b = \left(\f
 
 By setting the value for \\(y_m\\) we can create a variety of mappings:
 
-![Logarithmic potentiometer laws](/images/log-pot-mappings.png)
+<div>
+    <a href="https://plot.ly/~benholmes/4/?share_key=8cPOlabSsDaHuJ2drdG1CG" target="_blank" title="log-pot" style="display: block; text-align: center;"><img src="https://plot.ly/~benholmes/4.png?share_key=8cPOlabSsDaHuJ2drdG1CG" alt="log-pot" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="benholmes:4" sharekey-plotly="8cPOlabSsDaHuJ2drdG1CG" src="https://plot.ly/embed.js" async></script>
+</div>
+
+
+[//]: # ![Logarithmic potentiometer laws](/images/log-pot-mappings.png)
 
 Note that when setting \\(y_m = 0.5\\) that \\(b = \infty\\)! But for this value we can just use a linear map so no need to waste the computation time for the exponent.
 
