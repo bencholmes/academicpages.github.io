@@ -20,7 +20,7 @@ Your browser does not support the video tag.
 
 The only problem with this is that it does not satisfy the need of precision and accuracy. To accomplish this, I purchased a dedicated LCR meter, the DER EE DE-5000. This LCR meter appears to have been designed to rip off the IET Labs DE-5000, and sell at a fraction of the price. A [teardown at the EEVblog forum](http://www.eevblog.com/forum/testgear/der-ee-de-5000-unboxing-and-teardown/) shows that the equipment, while being budget, is of decent quality.
 
-<video width="480" height="280" controls>
+<video width="320" height="560" controls>
  <source src="/images/DE-5000.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
