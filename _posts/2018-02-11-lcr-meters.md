@@ -15,6 +15,8 @@ Recently I've been in need of measuring linear component values to a high degree
 
 The only problem with this is that it does not satisfy the need of precision and accuracy. To accomplish this, I purchased a dedicated LCR meter, the DER EE DE-5000. This LCR meter appears to have been designed to rip off the IET Labs DE-5000, and sell at a fraction of the price. A [teardown at the EEVblog forum](http://www.eevblog.com/forum/testgear/der-ee-de-5000-unboxing-and-teardown/) shows that the equipment, while being budget, is of decent quality.
 
+![MTester potentiometer measurement](https://i.imgur.com/FbV8oKc.gifv?1)
+
 I'm now hosting the [English manual](http://bencholmes.github.io/files/DE-5000_manual_english.pdf) for the DE-5000 on github. As the company that manufactures it is Japanese and there was no obvious link to the English manual when I purchased the unit, this seems like a sensible choice in case people come through looking for the manual in the future and other copies have been removed.
 
 This post will be updated with more information about the two units!
