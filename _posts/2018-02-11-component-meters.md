@@ -51,7 +51,7 @@ To illustrate the performance of both meters I have uploaded videos demonstratin
 Your browser does not support the video tag.
 </video>
 
-What is really useful about the M328 is that it has three connections, enabling it to measure the minimum resistance of the potentiometer, here measured to be 0.2 Ω. This is also shown on
+What is really useful about the M328 is that it has three connections, enabling it to measure the minimum resistance of the potentiometer, here measured to be 0.2 Ω. 
 
 ### DE-5000
 <video width="320" height="560" controls>
