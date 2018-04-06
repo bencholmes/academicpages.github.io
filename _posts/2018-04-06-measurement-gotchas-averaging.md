@@ -13,7 +13,7 @@ When trying to capture a clean signal from an electronic circuit, a popular stra
 
 One factor that is important to remember during the averaging process is the transient response of the circuit. If the circuit features large valued energy storing components, the transient response can feature long decay times. If the decay time is significant when compared to the length of the signal then the next time you take an average it can be skewed by the previous repeat.
 
-<img src="images/rc-circuit.png" width="50%" alt="RC circuit" />
+<img src="/images/rc-circuit.png" width="50%" alt="RC circuit" />
 
 Consider the pictured RC circuit with a resistor across the output. The time constant of the circuit is given by
 
