@@ -51,7 +51,7 @@ To illustrate the performance of both meters I have uploaded videos demonstratin
 Your browser does not support the video tag.
 </video>
 
-What is really useful about the M328 is that it has three connections, enabling it to measure the minimum resistance of the potentiometer, here measured to be 0.2 Ω. 
+What is really useful about the M328 is that it has three connections, enabling it to measure the minimum resistance of the potentiometer, here measured to be 0.2 Ω.
 
 ### DE-5000
 <video width="320" height="560" controls>
@@ -60,3 +60,9 @@ Your browser does not support the video tag.
 </video>
 
 Obviously the dedicated LCR meter that costs over 10x the price offers better precision with the resistance measurement, however the measured values seem pretty close!
+
+## Gutshots
+
+I had to disassemble the DE-5000 due to the meter indicating a short at all times. This actually turned out to be a calibration issue that was fixed by simply recalibrating. This did help in two ways however: calibration holds even when powered down so that recalibrating isn't necessary each use, and I took some shots of the inside of the meter.
+![Component-side DE-5000](https://i.imgur.com/CrPVbRg.jpg)
+![Button/screen-side DE-5000](https://i.imgur.com/cHPD5DT.jpg)
