@@ -15,7 +15,7 @@ One factor that is important to remember during the averaging process is the tra
 
 <img src="/images/rc-circuit.png" width="30%" alt="RC circuit" align="middle"/>
 
-Consider the pictured RC circuit with a resistor across the output. The time constant of the circuit is given by
+Let's say we're trying to model the pictured RC circuit. To do this we drive the circuit with a wide-band signal and compare the measurements to a model and see how good the fit is. The time constant of the circuit is given by
 
 $$ \tau = RC = 5\ \mathrm{k\Omega} \times 1\ \mathrm{\mu F} = 5\ \mathrm{ms} $$
 
@@ -23,7 +23,9 @@ Driving this circuit with a 10ms windowed multi-sine signal consisting of intege
 
 ![RC averaging error](/images/rc-averaging-error.png)
 
-The match between the model and the measurement in the first period is close. However in the second period there is a large discrepancy caused by the overlap of the transient decay from the previous period. By adding some zero-padding to the end this effect can be lessened:
+The match between the model and the measurement in the first period is close. However in the second period there is a large discrepancy caused by the overlap of the transient decay from the previous period. If we were to try and fit the model to the average of the two periods, it would appear that there is something significantly wrong with the model!
+
+By zero-padding the end of the signal, the transient decay can be mitigated:
 
 ![RC reduced error](/images/rc-averaging-error-lengthened.png)
 
