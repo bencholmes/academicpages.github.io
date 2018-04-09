@@ -2,9 +2,12 @@
 main:
   - title: "Research"
     url: /publications/
-        
+
   - title: "Blog Posts"
     url: /year-archive/
-    
+
   - title: "CV"
     url: /cv/
+
+  - title: "Research resources"
+    url: http://bholmesqub.github.io
