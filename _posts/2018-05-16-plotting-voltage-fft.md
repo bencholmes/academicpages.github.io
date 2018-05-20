@@ -30,7 +30,13 @@ $$
 V(m) = \frac{1}{N}\sum_{n=0}^{N-1}v[n] \cdot \mathrm{e}^{\frac{-2\pi j}{N} m\cdot n},\quad m=0,\ldots,N-1,
 $$
 
-where \\(V\\) is the DFT of the discrete time domain signal \\(v\\), each of length \\(N\\). The amplitude response in decibels is then given by \\(20 \cdot \text{log}_{10}(\lvert V \rvert)\\) or equivalently \\(10 \cdot \text{log}_{10}(\lvert V \rvert^2)\\). Though equivalent, the latter representation illustrates where **deci**bel comes from, as the logarithm is multiplied by 10. Further, the signal is converted such that the result is proportional to the power of the signal as the voltage is squared. (If the load impedance were known then the exact power could be found). This originates from how the decibel was first used as a method to compare the power of signals.
+where \\(V\\) is the DFT of the discrete time domain signal \\(v\\), each of length \\(N\\). The amplitude response in decibels is then given by
+
+$$
+20 \cdot \text{log}_{10}(\lvert V \rvert)\quad \text{or equivalently}\quad 10 \cdot \text{log}_{10}(\lvert V \rvert^2).
+$$
+
+Though equivalent, the latter representation illustrates where **deci**bel comes from, as the logarithm is multiplied by 10. Further, the signal is converted such that the result is proportional to the power of the signal as the voltage is squared. (If the load impedance were known then the exact power could be found). This originates from how the decibel was first used as a method to compare the power of signals.
 
 As the DFT calculates the integral of the signal over time, without scaling the output of the DFT by \\(1/N\\), \\(V\\) is actually proportional to the energy of signal.
 
