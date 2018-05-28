@@ -8,69 +8,67 @@ tags:
   - MATLAB
 ---
 
-Plotting a signal in the frequency domain is a fundamental analysis tool which can provide great insight into the signal's behaviour. Something I have struggled with in the past is getting the units correct such that the frequency-domain representation has physical significance. In this blog post I aim to outline how to properly find useful units with which to represent voltage signals.
+Plotting a signal in the frequency domain is a fundamental analysis tool which can provide great insight into the signal's behaviour. Something I have struggled with in the past is getting the units correct such that the amplitude response of the frequency-domain representation has physical significance. In this blog post I aim to outline how to properly find useful units with which to represent voltage signals.
 
-## Decibel Volts (dBV)
+## Testcase
 
-Typically in modelling analogue circuits the signals of interest are voltages, with the units volts (V). When plotting the amplitude response of a signal it is useful to convert the amplitudes into decibels as this captures the large change in amplitudes that are often present in the amplitude response of signals. It should be noted that for voltages to be represented as decibels there is the unit dBV or decibel volts, which gives the voltage amplitude with respect to 1 V. This metric is only defined for RMS levels, given by
+To illustrate the methods in this post, a voltage signal of two sine waves and a DC offset will be used:
 
-$$
-\bar{v} = 20 \cdot \text{log}_{10}\left(\sqrt{\sum_{n=0}^{N-1} v[n]^2}\right)
-$$
+Component | Frequency (Hz) | Peak Voltage (V)
+1 | 0 | 0.1
+2 | 50 | 0.01
+3 | 100 | 1
 
-where \\(v[n]\\) is the voltage at a given timestep \\(n\\) of length \\(N\\), and \\(\bar{v}\\) notates the RMS value of the signal in dBV. Prior to finding the result in decibels, common values of the RMS value of a signal are: \\(\bar{v} = A/\sqrt{2}\\) for a sine wave with a peak amplitude of \\(A\\), and for DC the RMS value is the DC voltage itself.
+![Voltage time domain signal](/images/voltagefft/td-example.png)
 
-These results will be used in the derivation of the amplitude response of a voltage signal in dBV.
+The objective is now to provide a method of illustration that enables quick determination of the frequency components in the summed signal and their respective levels.
 
 ## The DFT
 
-The DFT or Discrete Fourier Transform converts a discrete time-domain signal into a discrete frequency-domain signal. One notable algorithm for calculating the DFT is the the [Fast Fourier Transform or FFT](https://en.wikipedia.org/wiki/Fast_Fourier_transform) which utilises the symmetry of the DFT to optimise performance, and is typically the algorithm implemented by numerical software packages e.g. MATLAB. The general DFT algorithm is given by
+The DFT or Discrete Fourier Transform converts a discrete time-domain signal into a discrete frequency-domain signal. One notable algorithm for calculating the DFT is the the [Fast Fourier Transform or FFT](https://en.wikipedia.org/wiki/Fast_Fourier_transform) which utilises the symmetry of the DFT to optimise performance, and is typically the algorithm implemented by numerical software packages e.g. MATLAB. The DFT algorithm is given by
 
 $$
-V(m) = \frac{1}{N}\sum_{n=0}^{N-1}v[n] \cdot \mathrm{e}^{\frac{-2\pi j}{N} m\cdot n},\quad m=0,\ldots,N-1,
+\bar{V}(m) = \sum_{n=0}^{N-1}v(n) \cdot \mathrm{e}^{\frac{-2\pi j}{N} m\cdot n},\quad m=0,\ldots,N-1,
 $$
 
-where \\(V\\) is the DFT of the discrete time domain signal \\(v\\), each of length \\(N\\). The amplitude response in decibels is then given by
+where \\(\bar{V}\\) is the DFT of the discrete time domain signal \\(v\\), each of length \\(N\\). Immediately there has been a change of units in attempting to find the frequency domain representation: the DFT calculates the sum over the whole length of the signal as opposed to the instantaneous value. This is equivalent to a change from power to energy. Correction is achieved by normalising by the length of the signals i.e.
 
 $$
-20 \cdot \text{log}_{10}(\lvert V \rvert)\quad \text{or equivalently}\quad 10 \cdot \text{log}_{10}(\lvert V \rvert^2).
+V = \frac{1}{N} \bar{V},
 $$
 
-Though equivalent, the latter representation illustrates where **deci**bel comes from, as the logarithm is multiplied by 10. Further, the signal is converted such that the result is proportional to the power of the signal as the voltage is squared. (If the load impedance were known then the exact power could be found). This originates from how the decibel was first used as a method to compare the power of signals.
+where \\(V\\) now is the frequency domain representation of the voltage signal. This is a gotcha which got me as the scaling isn't included in the implementation in most maths software (specifically MATLAB).
 
-As the DFT calculates the integral of the signal over time, without scaling the output of the DFT by \\(1/N\\), \\(V\\) is actually proportional to the energy of signal.
+Now, finding the magnitude \\(\lvert V \rvert\\) already provides a physically significant representation, the results are in the same units as the original signal:
 
-## Plotting the magnitude of the DFT in dBV
+![Voltage frequency domain without any scaling](/images/voltagefft/fd-notdb.png)
 
-The DFT works by comparing the measured signal to sinusoidal signals at frequencies relative to the sample rate and enumerating their similarity. This yields a set of values which indicate the sinusoidal components that are present in a signal and their amplitudes (and phases). As well as the sinusoidal components, the DFT also covers the case of DC, i.e. when the signal is constant, which is when \\(m=0\\).
-
-To convert the DFT amplitude response into dBV then there is a scaling factor that accounts for the RMS of the two types of signals: DC and sinusoidal. This is given by
+Inspecting the DFT of the signal sampled at \\(F_\mathrm{s} = \\)500 Hz, the DC component is correct at 0.1 V, although the 100 Hz component is at half the amplitude it should be. This is because the amplitude is split into the bins between 0 Hz - \\(F_\mathrm{s}/2\\) and \\(F_\mathrm{s}/2\\) - \\(F_\mathrm{s}\\) due to the symmetry of the DFT. It is therefore necessary to scale all of the bins that are not DC by a factor of 2:
 
 $$
+V(m) = \frac{k(m)}{N} \bar{V(m)},\quad\mathrm{where}\quad
 k(m) =
 \begin{cases}
-\sqrt{2}, & m \neq 0\\
+2, & m \neq 0\\
 1, & m=0
 \end{cases}
 ,\quad m=0,\ldots,N-1.
 $$
 
-For the DFT bins are scaled by the peak to RMS ratio. This results in a scaled DFT output
+This yields an accurate representation of the signal in the frequency domain. We can do better however as it is difficult to determine the amplitude of the 50 Hz component. This can be solved with...
+
+## Decibels
+
+Decibels provide a method of scaling data that is over a large range of values such that it can be read easily, and often helps illustrate trends in data that are otherwise unclear. It is useful here as very small voltages often coincide with very large voltages (typically signals vs noise).
+
+A logarithmic scaling similar to converting to decibels can be achieved using
 
 $$
-\bar{V}(m) = k(m)V(m).
+10 \cdot \text{log}_{10}(\lvert V \rvert).
 $$
 
-## Numerical example
+where the results will now be scaled such that a signal that had a 10 V peak now is at 2 i.e. \\(10 \cdot \text{log}_{10}(\lvert 1\times10^2 \rvert) = 2 \\), and so a 0.01 V peak is at -2. The exponent in scientific notation is captured in the new value. To present the new data the old values can simply be used as axis labels, and just utilise the new scaling. Most software for plotting encompass a logarithmic plotting option which captures this and displays with the original units, for example with MATLAB and `semilogy()`:
 
-This can be written in MATLAB as shown this gist:
+![Frequency domain with logarithmic scaling](/images/voltagefft/fd-db.png)
 
-<script src="https://gist.github.com/bencholmes/19c0edaab1499162be45d9c274cee8e4.js"></script>
-
-This can be tested by trying different amplitudes and frequencies. The following illustration uses a test signal with two sine waves (1 Vpeak @ 50 Hz, \\(\sqrt{2}\\) Vpeak @ 100 Hz) and a DC offset of 1 V.
-
-![Two-tone and DC signal example](/images/plotting-voltages-example.png)
-
-## Further resources
-
-For testing the algorithm I have used [this calculator from Analog Devices](www.analog.com/en/design-center/interactive-design-tools/dbconvert.html).
+Now the amplitudes are much easier to distinguish over a larger range (the labels help too!).
