@@ -39,7 +39,7 @@ Work experience
 
 Education
 ======
-**PhD in Electronic Engineering**, 2018 (expected)
+**PhD in Electronic Engineering**, 2019 (post-viva, pre-graduation)
 
 *Queen's University Belfast*
 
