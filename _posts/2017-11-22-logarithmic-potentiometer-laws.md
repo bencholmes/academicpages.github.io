@@ -61,7 +61,7 @@ By setting the value for \\(y_m\\) we can create a variety of mappings:
 
 [//]: # ![Logarithmic potentiometer laws](/images/log-pot-mappings.png)
 
-Note that when setting \\(y_m = 0.5\\) that \\(b = \infty\\)! But for this value we can just use a linear map so no need to waste the computation time for the exponent.
+Note that when setting \\(y_m = 0.5\\) that \\(a = \infty\\)! But for this value we can just use a linear map so no need to waste the computation time for the exponent.
 
 Choosing for example \\(y_m = 0.15\\) will give quite a good approximation of a log pot, though I say this without measurements or further evidence. For an anti-log pot one could select a value around \\(0.85\\).
 
